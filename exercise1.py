@@ -147,7 +147,7 @@ def display_points(player_points):
         print("-" * 50) 
 
 #compares points and eliminates player if necessary
-def compare_points(player_points, cards_for_players, players, cards_per_players):
+def compare_points(player_points, cards_for_players, players):
     min_points = min(player_points.values())
     lowest_players = [player for player, points in player_points.items() if points == min_points]
 
@@ -224,7 +224,7 @@ def main():
         swap_one_card(cards_for_players)    
         player_points = counting_points(cards_for_players)
         display_points(player_points)
-        compare_points(player_points, cards_for_players, players, cards_per_player)
+        compare_points(player_points, cards_for_players, players)
     
     winner = players[0]    
     print(f"The winner is: {winner}")
