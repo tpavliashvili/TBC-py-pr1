@@ -1,5 +1,9 @@
 from random import randint, choice
 
+def add_players(players, players_count):
+    for i in range(1, players_count + 1):
+        players.append(input(f"Enter name of the player {i}: "))
+
 def generate_single_card():
     value_of_cards = randint(2, 14)
 
@@ -212,8 +216,7 @@ def main():
     players = []
     cards_per_player = 5
     players_count = 3
-    for i in range(1, players_count + 1):
-        players.append(input(f"Enter name of the player {i}: "))
+    add_players(players, players_count)
 
     while len(players) > 1:
         cards_for_players = dealing_cards(players, cards_per_player)
